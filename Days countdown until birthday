@@ -1,0 +1,13 @@
+import Foundation
+
+let formatter = DateFormatter()
+formatter.dateFormat = "yyyy/MM/dd"
+
+let birthday = formatter.date(from: "2025/09/20")!
+let today = Date()
+
+let diff = Calendar.current.dateComponents([.day], from: today, to: birthday)
+
+if let days = diff.day {
+    print("Your birthday is in \(days) days!")
+}
